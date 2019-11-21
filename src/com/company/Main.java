@@ -1,10 +1,13 @@
 package com.company;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.*;
+import java.io.FileReader;
+
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         ArrayList<Phone> phone = new ArrayList<>();
         Phone phone1 = new Phone();
@@ -101,20 +104,38 @@ public class Main {
         String anotherNum = sc.nextLine();
         System.out.println("Введите id абонента: ");
         String idAbon = sc.nextLine();
-        if(idAbon.matches("1")){
+        if (idAbon.matches("1")) {
             phone1.setNumber(anotherNum);
             System.out.println(phone1.toString());
-        }
-        else if(idAbon.matches("2")){
+        } else if (idAbon.matches("2")) {
             phone2.setNumber(anotherNum);
             System.out.println(phone2.toString());
-        }
-        else {
+        } else {
             System.out.println("Абонента нет");
         }
 
+        FileWriter fw = new FileWriter("phone.txt");
+        FileWriter fw_copy = new FileWriter("phone_copy.txt");
 
-}
+        System.out.println("Введите id абонента данные которого хотите записать в файл: ");
+
+        String idAb = sc.nextLine();
+
+            if (idAb.matches("1")) {
+                fw.write(phone1.toString());
+                fw_copy.write(phone1.toString());
+                fw.close();
+                fw_copy.close();
+            } else if (idAb.matches("2")) {
+                fw.write(phone2.toString());
+                fw_copy.write(phone2.toString());
+                fw.close();
+                fw_copy.close();
+            } else {
+                System.out.println("Абонента нет ");
+            }
+    }
+
 }
 
 

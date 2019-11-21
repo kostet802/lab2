@@ -51,9 +51,6 @@ public class Phone {
         return "Number: " + number + "\n"+ "Fio: " + fio + "\n" + "Adres: " + adres +"\n";
     }
 
-    public String Poisk(String number){
 
-        return "0";
-    }
 }
 
