@@ -20,7 +20,7 @@ public class Phone {
        }
 
     }
-    public String getNumber(){
+    public String getNumber(String number){
         return number;
     }
     public void setFio(String fio){
@@ -31,7 +31,7 @@ public class Phone {
             System.out.println("Wrong fio");
         }
     }
-    public String getFio(){
+    public String getFio(String fio){
         return fio;
     }
     public void setAdres(String adres) {
@@ -43,9 +43,17 @@ public class Phone {
         }
 
     }
-    public String getAdres(){
+    public String getAdres(String adres){
         return adres;
     }
 
+    public String toString() {
+        return "Number: " + number + "\n"+ "Fio: " + fio + "\n" + "Adres: " + adres +"\n";
+    }
+
+    public String Poisk(String number){
+
+        return "0";
+    }
 }
 
